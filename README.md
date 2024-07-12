@@ -2,26 +2,32 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.8.
 
-## Development server
+## Enunciado
+Desarrollar una aplicación web intermedia para calcular los pagos de empleados, incluyendo horas extras y deducciones, que permita gestionar y visualizar el cálculo del salario final de los empleados.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Formulario de Ingreso de Datos del Empleado: (10 puntos)
+Crear un formulario que permita al usuario ingresar el nombre del empleado, salario por hora, horas trabajadas y horas extras trabajadas.
+Validar que todos los campos sean números positivos.
+Deshabilitar el botón de cálculo hasta que todos los campos sean válidos.
+Cálculo del Salario: (10 puntos)
+Implementar un servicio en Angular que realice el cálculo del salario semanal del empleado utilizando la siguiente lógica:
 
-## Code scaffolding
+Salario Regular: El salario regular se calcula con base en las horas trabajadas y el salario por hora ingresado por el empleado.
+Salario por Horas Extras: Se debe considerar una tarifa adicional para las horas trabajadas que exceden el horario regular. Esta tarifa adicional es 1.5 veces el salario por hora regular.
+Deducciones: Se debe calcular un porcentaje del salario total (salario regular más salario por horas extras) para deducciones como impuestos. El porcentaje estándar para deducciones es del 10% del salario total.
+Salario Neto: El salario neto se obtiene después de aplicar todas las deducciones al salario total.
+Mostrar los resultados de salario regular, salario por horas extras, deducciones y salario neto.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Models
+Modelo para el Request de Ingreso de Datos del Empleado:
 
-## Build
+name: Nombre del empleado.
+hourlyWage: Salario por hora del empleado.
+hoursWorked: Horas trabajadas durante la semana.
+overtimeHours: Horas extras trabajadas durante la semana.
+Modelo para el Response de Cálculo del Salario:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+regularSalary: Salario regular basado en las horas trabajadas y el salario por hora.
+overtimeSalary: Salario por horas extras basado en una tarifa adicional.
+deductions: Deducciones aplicadas al salario total.
+netSalary: Salario neto después de aplicar las deducciones.
