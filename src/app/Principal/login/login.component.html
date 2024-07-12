@@ -1,0 +1,20 @@
+<div class="app-container">
+    <div class="wrapper">
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="form">
+            <h1 class="title">Inicio</h1>
+            <div class="inp">
+                <input formControlName="username" type="text" class="input" placeholder="Usuario">
+                <i class="fa-solid fa-user"></i>
+            </div>
+            <div class="inp">
+                <input formControlName="password" type="password" class="input" placeholder="Contraseña">
+                <i class="fa-solid fa-lock"></i>
+            </div>
+            <button type="submit" class="submit">Iniciar sesión</button>
+        </form>
+        <div class="banner">
+            <h1 class="wel_text">Examen Final</h1><br>
+            <p class="para"></p>
+        </div>
+    </div>
+</div>
