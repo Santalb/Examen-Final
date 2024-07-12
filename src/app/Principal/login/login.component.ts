@@ -24,7 +24,7 @@ export class LoginComponent {
   onSubmit(): void {
     const { username, password } = this.loginForm.value;
     if (username === 'alexis' && password === 'alexis12') {
-      this.router.navigate(['/inicio']);
+      this.router.navigate(['/form']);
     } else {
       alert('Usuario o contraseña incorrectos');
     }
